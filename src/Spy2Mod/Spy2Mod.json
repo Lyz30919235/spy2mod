@@ -1,0 +1,12 @@
+{
+  "id": "Spy2Mod",
+  "name": "Spy2Mod 基础工程",
+  "author": "Lyz30919235",
+  "description": "用于验证杀戮尖塔2模组加载的基础工程。",
+  "version": "0.1.0",
+  "min_game_version": "0.111.0",
+  "has_pck": false,
+  "has_dll": true,
+  "dependencies": [],
+  "affects_gameplay": false
+}

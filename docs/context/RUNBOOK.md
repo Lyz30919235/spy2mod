@@ -46,4 +46,50 @@ git status --short
 
 ## 业务运行、构建与测试
 
-待核实：当前没有经项目证据确认的业务运行、依赖安装、构建、测试或部署步骤。获得实际入口和验证依据后再补充相应章节；不执行推测的初始化或安装命令。
+前置条件：Windows、PowerShell 7、Git、已安装的 Steam 版《杀戮尖塔2》，以及当前任务允许的本机安装或部署范围。以下为方法，实际执行结果以 [NOW.md](NOW.md) 为准。
+
+### 初次准备
+
+在项目根目录执行：
+
+```powershell
+.\scripts\Get-Tutorial.ps1
+.\scripts\Install-Tools.ps1
+.\scripts\Configure-Local.ps1
+```
+
+- 教程脚本使用 `references.lock.json` 固定的提交；已有副本的远端不符或存在本地改动时停止，避免覆盖批注。
+- 工具脚本使用 `toolchain.json` 中的官方地址，校验完整 ZIP 的哈希后解压，运行版本查询。已有完整缓存会复用；校验失败的文件不得安装。
+- 下载连接受现有代理影响时，可用 `Install-Tools.ps1 -NoProxy` 对单次请求直连，不改变系统代理。该选项不是成功证据；传输中断时保留诊断并重新获取完整、校验通过的缓存。
+- 配置脚本寻找 Steam App `2868840`，确认游戏程序集及工具存在后写入 `.local/settings.json`。自动定位失败时可传 `-GameDir '<游戏根目录>'`；带占位符的命令仅是备用方法，本轮不据此声称执行过。
+- 配置脚本还将 Godot 自带的 NuGet 包复制到 `.tools/nuget-feed/`；基础工程按 `nuget.config` 使用本机包源。将来接入内容基础库时，再按对应依赖要求补充包源。
+- 本机路径仅留在忽略配置中；更新工具版本须同步检查 `global.json`、工程 SDK 和工具包之间的兼容关系。
+
+### 构建与部署
+
+```powershell
+.\scripts\Build-Mod.ps1
+.\scripts\Build-Mod.ps1 -Deploy
+```
+
+第一条构建并整理本机产物；第二条还将本模组复制到游戏 `mods/Spy2Mod/` 并比较文件 SHA256。已有同名部署目录必须含本模组清单，否则停止。部署后重新启动游戏才会载入新 DLL。
+
+当前入口只有初始化日志，清单声明不影响玩法、无 PCK。后续添加资源或玩法时，必须据实际情况更新资源标志、依赖和 `affects_gameplay`；资源包导出及内容基础库接入尚无本项目执行证据。
+
+### 游戏加载检查
+
+```powershell
+.\scripts\Smoke-Test.ps1
+```
+
+游戏应已关闭且本模组已部署。脚本以无界面、关闭 Steam 初始化的模式启动实际游戏，限定运行帧数；证据留在 `artifacts/smoke/`。只有退出成功且日志出现 `[Spy2Mod] initialized;`，才判定初始化检查通过。
+
+若遇首次模组启用提示或加载失败，先检查该次日志；需要交互时在游戏界面处理对应提示并重启，不直接修改或复制存档。无界面初始化、图形界面、实际对局及用户验收分别记录。
+
+### 打开编辑器
+
+```powershell
+.\scripts\Open-Editor.ps1
+```
+
+脚本为当前子进程设置便携 .NET 路径和本机包缓存，打开 Godot .NET 编辑器；源码目录映射见 [MAP.md](MAP.md)。Godot 工程用于源码和资源编辑，运行入口为游戏模组加载器。编辑器入口是否实际执行见 [NOW.md](NOW.md)。

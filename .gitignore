@@ -14,3 +14,12 @@
 Thumbs.db
 Desktop.ini
 .DS_Store
+
+# 本机参考副本、工具、配置和构建产物，不上传公共仓库。
+/references/
+/.tools/
+/.local/
+/artifacts/
+**/bin/
+**/obj/
+**/.godot/

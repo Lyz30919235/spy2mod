@@ -1,0 +1,18 @@
+{
+  "dotnet": {
+    "version": "9.0.319",
+    "url": "https://builds.dotnet.microsoft.com/dotnet/Sdk/9.0.319/dotnet-sdk-9.0.319-win-x64.zip",
+    "algorithm": "SHA512",
+    "hash": "663d866ad213602d8e267ea5eb575e79bf3f4b920b29f246017021551e93e895e1b2a1f0abee08ec26030eb95b818792a2a7a5835fbada90798ad66eb5c7b168",
+    "directory": ".tools/dotnet",
+    "executable": "dotnet.exe"
+  },
+  "godot": {
+    "version": "4.5.1",
+    "url": "https://github.com/godotengine/godot/releases/download/4.5.1-stable/Godot_v4.5.1-stable_mono_win64.zip",
+    "algorithm": "SHA256",
+    "hash": "8ce2346c05c8a9674ab267b4a0a7e2764a6e47da730713aa932c2a6db774a239",
+    "directory": ".tools/godot",
+    "executable": "Godot_v4.5.1-stable_mono_win64/Godot_v4.5.1-stable_mono_win64_console.exe"
+  }
+}
