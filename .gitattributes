@@ -7,3 +7,4 @@
 *.json text eol=lf
 *.godot text eol=lf
 *.config text eol=lf
+*.uid text eol=lf

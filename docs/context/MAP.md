@@ -11,7 +11,7 @@
 | `AGENTS.md`、`PROJECT_INDEX.md`、`README.md` | 根目录协作入口；详细职责由 [项目索引](../../PROJECT_INDEX.md) 路由。 |
 | `docs/context/` | 当前状态、映射、操作、决策与风险的专题权威文件。 |
 | `docs/context/history/` | 有价值的历史归档及其索引，按需追溯。 |
-| `src/Spy2Mod/Scripts/Entry.cs` | 模组初始化入口，当前输出加载日志。 |
+| `src/Spy2Mod/Scripts/Entry.cs`、`Entry.cs.uid` | 模组初始化入口及 Godot 生成的稳定脚本标识，当前输出加载日志。 |
 | `src/Spy2Mod/Spy2Mod.csproj`、`project.godot` | C# 编译配置及 Godot 编辑器工程；使用本机游戏程序集引用。 |
 | `src/Spy2Mod/Spy2Mod.json` | 模组 ID、版本、兼容下限、依赖及资源标志的权威清单。 |
 | `scripts/` | 教程下载、工具安装、本机配置、构建部署、无界面加载检查及编辑器入口。 |
