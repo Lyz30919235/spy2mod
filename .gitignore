@@ -1,0 +1,16 @@
+# 本机配置与凭据；公开模板必须使用不含秘密的示例值。
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+
+# 临时文件与系统元数据。
+*.log
+*.tmp
+*.bak
+Thumbs.db
+Desktop.ini
+.DS_Store
