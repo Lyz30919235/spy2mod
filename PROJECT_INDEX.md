@@ -14,6 +14,7 @@
 | 定位目录、版本、配置、远端与部署关系 | [MAP.md](docs/context/MAP.md) | 映射变化 |
 | 执行操作、确认前置条件及验证方法 | [RUNBOOK.md](docs/context/RUNBOOK.md) | 操作方法变化 |
 | 下载教程、定位学习章节、核对参考快照 | [REFERENCES.md](docs/context/REFERENCES.md) | 来源、固定版本或路由变化 |
+| 评审三流派卡池、通用卡、初始卡组及候选机制 | [DECK_DESIGN.md](docs/context/DECK_DESIGN.md) | 设计候选或用户反馈有实质变化 |
 | 查阅已确认决策、理由、范围与来源 | [DECISIONS.md](docs/context/DECISIONS.md) | 决策确认或被替代 |
 | 判断已知问题、风险、验证缺口与保护措施 | [RISKS.md](docs/context/RISKS.md) | 风险证据或状态变化 |
 | 追溯有价值的旧记录 | [历史索引](docs/context/history/README.md) | 发生必要归档 |
